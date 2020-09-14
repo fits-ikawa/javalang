@@ -825,6 +825,7 @@ class Parser(object):
             member = self.parse_method_or_field_declaraction()
 
         member._position = token.position
+        member._position_end = self.tokens.last().position
         member.modifiers = modifiers
         member.annotations = annotations
         member.documentation = javadoc
